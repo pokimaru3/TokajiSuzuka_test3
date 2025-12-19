@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+
 #
+
 =======
+
 # アプリケーション名
 
 Rese（リーズ）<br>
@@ -276,4 +279,5 @@ php artisan migrate --env=testing
 ```
 php artisan test
 ```
->>>>>>> 5bbf920 (リモートリポジトリの変更)
+
+> > > > > > > 5bbf920 (リモートリポジトリの変更)
