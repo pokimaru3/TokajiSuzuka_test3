@@ -1,0 +1,61 @@
+.admin-create-wrapper {
+    max-width: 700px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 5px;
+}
+
+.admin-create-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 35px 0;
+    margin-bottom: 35px;
+    color: #000000;
+}
+
+.admin-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__error {
+    color: #ff0000;;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 18px;
+    border-radius: 6px;
+    background: #2962ff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+    margin: 30px 0 20px 0;
+}

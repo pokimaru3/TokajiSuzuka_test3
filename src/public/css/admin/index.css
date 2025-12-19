@@ -1,0 +1,32 @@
+.admin-managers-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.admin-managers-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.admin-managers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-managers__header {
+    background-color: #2962ff;
+    color: #fff;
+}
+
+.admin-managers-table th,
+.admin-managers-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+

@@ -1,0 +1,131 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.28);
+    max-width: 1200px;
+    margin: -45px 70px 0 auto;
+    width: 600px;
+}
+
+.search-box select {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    color: #000000;
+    padding-right: 17px;
+    appearance: none;
+    position: relative;
+}
+
+.search-box select {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    background-size: 15px;
+}
+
+.search-box select+select,
+.search-box select+.search-input {
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.search-icon {
+    color: #888;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-input input {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+}
+
+.shop-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.shop-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(47, 46, 46, 0.766);
+}
+
+.shop-card__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.shop-card__body {
+    padding: 15px;
+    position: relative;
+}
+
+.shop-card__title {
+    font-size: 17px;
+    margin: 2px 0 4px;
+}
+
+.shop-card__tags {
+    font-size: 11px;
+    color: #000000;
+    margin: 2px 0 10px;
+}
+
+.btn-detail {
+    display: inline-block;
+    background: #2962ff;
+    color: white;
+    padding: 5px 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.favorite-btn {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.favorite-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 35px;
+}
+
+.favorite-icon i {
+    color: #dbdbdb6d;
+}
+
+.favorite-icon.active i {
+    color: #ff0000;
+}
+
+.favorite-btn .guest i {
+    color: #dbdbdb6d;
+    font-size: 35px;
+}

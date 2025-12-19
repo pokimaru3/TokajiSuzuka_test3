@@ -1,0 +1,114 @@
+.detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.shop-info {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.shop-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding-bottom: 5px;
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.374);
+}
+
+.shop-name {
+    font-size: 25px;
+}
+
+.shop-image {
+    width: 90%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-group select,
+.form-group textarea {
+    width: 90%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: block;
+    margin: 30px 0 60px;
+    width: 200px;
+    text-align: center;
+    padding: 10px 20px;
+    background: #2962ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: -70px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.detail-wrapper form {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.shop-info p {
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.form__error {
+    color: #ff0000;;
+    font-size: 15px;
+}

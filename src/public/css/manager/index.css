@@ -1,0 +1,75 @@
+.manager-shops-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.manager-shops-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.manager-shops-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.manager-shops__header {
+    background-color: #2962ff;
+    color: #fff;
+}
+
+.manager-shops-table th,
+.manager-shops-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.manager-shops-table th:last-child {
+    border: none;
+}
+
+.edit-btn,
+.send-btn {
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.edit-btn {
+    font-size: 15px;
+    padding: 0 12px;
+    background: #2962ff;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.send-btn {
+    width: 36px;
+    margin-left: 15px;
+    color: #a5d2dc;
+}
+
+.send-btn i {
+    font-size: 22px;
+    line-height: 1;
+    display: block;
+}
+
+.send-btn--disabled {
+    color: #ccc;
+}
+
+.message {
+    text-align: center;
+    padding: 20px;
+    color: #2962ff;
+    font-size: 20px;
+}
