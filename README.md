@@ -131,31 +131,13 @@ QR 読み取り後、visit site をクリックすると予約内容が表示さ
 
 ## テストユーザー
 
-管理者:
-
-<Admin>
-- email → admin@example.com
-- password → password
-
-店舗代表者:
-
-<Manager1>
-- email → manager1@example.com
-- password → password
-
-<Manager2>
-- email → manager2@example.com
-- password → password
-
-一般ユーザー:
-
-<User1>
-- email → user@example.com
-- password → password
-
-<User2>
-- email → user2@example.com
-- password → password
+|              | ユーザー名 | メールアドレス                                      | パスワード |
+| ------------ | ---------- | --------------------------------------------------- | ---------- |
+| 管理者       | Admin      | [admin@example.com](mailto:admin@example.com)       | password   |
+| 店舗代表者   | Manager1   | [manager1@example.com](mailto:manager1@example.com) | password   |
+| 店舗代表者   | Manager2   | [manager2@example.com](mailto:manager2@example.com) | password   |
+| 一般ユーザー | User1      | [user@example.com](mailto:user@example.com)         | password   |
+| 一般ユーザー | User2      | [user2@example.com](mailto:user2@example.com)       | password   |
 
 ## テーブル設計
 
