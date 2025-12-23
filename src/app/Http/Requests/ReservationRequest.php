@@ -6,6 +6,7 @@ use App\Models\Reservation;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Carbon\Carbon;
 
 class ReservationRequest extends FormRequest
 {
@@ -24,10 +25,10 @@ class ReservationRequest extends FormRequest
             'time_slot' => [
                 'required',
                 function ($attribute, $value, $fail) {
-                    $exists = Reservation::where('user_id', auth()->id())
-                        ->where('shop_id', $this->input('shop_id'))
+                    $time = Carbon::parse($value)->format('H:i:s');
+                    $exists = Reservation::where('shop_id', $this->input('shop_id'))
                         ->where('reservation_date', $this->input('reservation_date'))
-                        ->where('time_slot', $value)
+                        ->where('time_slot', $time)
                         ->exists();
                     if ($exists) {
                         $fail('この日時ですでに予約済みです。');

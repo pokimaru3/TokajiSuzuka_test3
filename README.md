@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-#
-
-=======
-
 # アプリケーション名
 
 Rese（リーズ）<br>
@@ -21,7 +15,7 @@ Rese（リーズ）<br>
 - 店舗検索機能
 - お気に入り機能
 - 店舗予約/予約変更/予約キャンセル機能
-- QR コード読み取り機能
+- QR コード機能
 - 店舗の評価機能
 - 店舗代表者作成機能（管理者）
 - 店舗情報作成/更新機能（店舗代表者）
@@ -33,6 +27,7 @@ Rese（リーズ）<br>
 - mysql 9.3.0
 - nginx 1.29.3
 - MailHog latest
+- simple-qrcode
 
 ## 環境構築
 
@@ -79,7 +74,6 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=example@example.com
 MAIL_FROM_NAME="${APP_NAME}"
-
 ```
 
 5. アプリケーションキーの作成
@@ -102,33 +96,66 @@ php artisan db:seed
 
 #### mailhog
 
-- http://localhost:8025
+http://localhost:8025
 
-#### QR コード読み取り
+#### QR コード
 
 ngrok を利用してローカル環境を一時的に公開しています。
 リポジトリをクローンした後、各自で ngrok を起動し、
-発行された URL を .env の APP_URL に設定することで動作確認が可能です。
+発行された URL を .env の NGROK_URL に設定することで動作確認が可能です。
 （ngrok は開発用途であり、本番環境ではクラウドサーバーへデプロイする想定です。）
+
+1.ngrok にサインアップ
+https://ngrok.com/
+
+2.ngrok をインストール
+
+```bash
+brew install ngrok
+```
+
+3.ngrok を起動
+
+```bash
+ngrok http 80
+```
+
+4.表示された URL を .env に設定<br>
+NGROK_URL=https://xxxxx.ngrok-free.dev
+
+```bash
+php artisan config:clear
+```
+
 QR 読み取り後、visit site をクリックすると予約内容が表示されます。
 
 ## テストユーザー
 
+管理者:
+
+<Admin>
+- email → admin@example.com
+- password → password
+
 店舗代表者:
 
-- Manager1
-- email => manager1@example.com
-- password => password
+<Manager1>
+- email → manager1@example.com
+- password → password
 
-- Manager2
-- email => manager2@example.com
-- password => password
+<Manager2>
+- email → manager2@example.com
+- password → password
 
 一般ユーザー:
 
-- User
-- email => user@example.com
-- password => password
+<User1>
+- email → user@example.com
+- password → password
+
+<User2>
+- email → user2@example.com
+- password → password
 
 ## テーブル設計
 
@@ -141,10 +168,10 @@ QR 読み取り後、visit site をクリックすると予約内容が表示さ
 | email             | varchar(255)                   |             | ○          | ○        |             |
 | email_verified_at | timestamp                      |             |            | ○        |             |
 | password          | varchar(255)                   |             |            | ○        |             |
-| rememberToken     | varchar(100)                   |             |            | ○        |             |
+| rememberToken     | varchar(100)                   |             |            |          |             |
 | role              | enum('user','manager','admin') |             |            | ○        |             |
-| created_at        | timestamp                      |             |            | ○        |             |
-| updated_at        | timestamp                      |             |            | ○        |             |
+| created_at        | timestamp                      |             |            |          |             |
+| updated_at        | timestamp                      |             |            |          |             |
 
 ### shops テーブル
 
@@ -193,7 +220,7 @@ QR 読み取り後、visit site をクリックすると予約内容が表示さ
 | user_id        | unsigned bigint |             |            | ○        | users(id)        |
 | shop_id        | unsigned bigint |             |            | ○        | shops(id)        |
 | rating         | tinyint         |             |            | ○        |                  |
-| comment        | text            |             |            | ○        |                  |
+| comment        | text            |             |            |          |                  |
 | created_at     | timestamp       |             |            |          |                  |
 | updated_at     | timestamp       |             |            |          |                  |
 
@@ -203,7 +230,7 @@ QR 読み取り後、visit site をクリックすると予約内容が表示さ
 
 # 備考
 
-飲食店の検索機能は検索ボタンがないので Enter を押すと検索結果が表示されます。
+- 飲食店の検索機能は検索ボタンがないので Enter を押すと検索結果が表示されます。
 
 コーチの許可あり ↓
 
@@ -279,5 +306,3 @@ php artisan migrate --env=testing
 ```
 php artisan test
 ```
-
-> > > > > > > 5bbf920 (リモートリポジトリの変更)

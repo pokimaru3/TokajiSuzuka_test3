@@ -8,6 +8,7 @@
 <div class="detail-wrapper">
     <form action="{{ route('manager.shop.update', $shop->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="shop-info">
             <div class="shop-header">
                 <a href="{{ route('manager.shop.index') }}" class="back-btn"><</a>

@@ -44,7 +44,7 @@ class ManagerController extends Controller
             'genre' => $validated['genre'],
             'max_capacity' => $validated['max_capacity'],
             'description' => $validated['description'],
-            'email' => $validated['email'],
+            'email' => $validated['email'] ?? null,
             'image_url' => $imageUrl,
         ]);
 
@@ -85,14 +85,19 @@ class ManagerController extends Controller
             $shop->image_url = 'storage/' . $path;
         }
 
-        $shop->update([
+        $data = [
             'name' => $validated['name'],
             'area' => $validated['area'],
             'genre' => $validated['genre'],
             'max_capacity' => $validated['max_capacity'],
             'description' => $validated['description'],
-            'email' => $validated['email'],
-        ]);
+        ];
+
+        if (array_key_exists('email', $validated)) {
+            $data['email'] = $validated['email'];
+        }
+
+        $shop->update($data);
 
         return redirect()->route('manager.shop.index');
     }

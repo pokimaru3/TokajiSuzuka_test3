@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ManagerShopRequest extends FormRequest
 {
@@ -20,7 +21,8 @@ class ManagerShopRequest extends FormRequest
             'max_capacity' => 'required|integer|min:1',
             'description' => 'required|string|max:300',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'email' => 'nullable|email|string|max:191|unique:shops,email,' . $this->shop->id,
+            'email' => [
+                'nullable', 'email', 'string', 'max:191', Rule::unique('shops', 'email')->ignore(optional($this->shop)->id)],
         ];
     }
 

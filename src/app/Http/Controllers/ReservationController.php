@@ -30,9 +30,11 @@ class ReservationController extends Controller
 
     public function cancel(Request $request)
     {
-        $reservation = Reservation::where('id', $request->reservation_id)
-            ->where('user_id', Auth::id())
-            ->first();
+        $reservation = Reservation::findOrFail($request->reservation_id);
+
+        if ($reservation->user_id !== auth()->id()) {
+            abort(403);
+        }
 
         $reservation->delete();
 

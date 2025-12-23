@@ -69,7 +69,7 @@ Route::prefix('manager')->name('manager.')->group(function () {
         Route::get('/shop/create', [ManagerController::class, 'create'])->name('create');
         Route::post('/shop/store', [ManagerController::class, 'store'])->name('store');
         Route::get('/shop/{shop}/edit', [ManagerController::class, 'edit'])->name('shop.edit');
-        Route::post('/shop/{shop}/update', [ManagerController::class, 'update'])->name('shop.update');
+        Route::put('/shop/{shop}', [ManagerController::class, 'update'])->name('shop.update');
         Route::get('/shops', [ManagerController::class, 'index'])->name('shop.index');
         Route::get('/manager/shops/{shop}/mail', [ManagerController::class, 'showMailForm'])
         ->name('mail.create');

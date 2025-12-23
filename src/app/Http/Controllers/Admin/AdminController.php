@@ -24,7 +24,7 @@ class AdminController extends Controller
             'role' => 'manager',
         ]);
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.index');
     }
 
     public function index()
