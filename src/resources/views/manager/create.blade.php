@@ -11,7 +11,7 @@
         @csrf
         <div class="form-group">
             <label for="name" class="form-label">店舗名</label>
-            <input type="text" name="name" class="form-input" value="{{ old('name') }}">
+            <input id="name" type="text" name="name" class="form-input" value="{{ old('name') }}">
             <div class="form__error">
                 @error('name')
                 {{ $message }}
@@ -52,7 +52,7 @@
         </div>
         <div class="form-group">
             <label for="max_capacity" class="form-label">最大予約可能人数</label>
-            <input type="number" name="max_capacity" min="1" class="form-input" value="{{ old('max_capacity') }}">
+            <input id="max_capacity" type="number" name="max_capacity" min="1" class="form-input" value="{{ old('max_capacity') }}">
             <div class="form__error">
                 @error('max_capacity')
                 {{ $message }}
@@ -60,8 +60,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="name" class="form-label">メールアドレス（任意）</label>
-            <input type="text" name="email" class="form-input" value="{{ old('email') }}">
+            <label for="email" class="form-label">メールアドレス（任意）</label>
+            <input id="email" type="text" name="email" class="form-input" value="{{ old('email') }}">
             <div class="form__error">
                 @error('email')
                 {{ $message }}

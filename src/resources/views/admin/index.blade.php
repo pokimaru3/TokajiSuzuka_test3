@@ -17,13 +17,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($managers as $manager)
+            @forelse ($managers as $manager)
                 <tr>
                     <td>{{ $manager->name }}</td>
                     <td>{{ $manager->email }}</td>
                     <td>{{ $manager->created_at->format('Y年m月d日') }}</td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="3">店舗代表者はまだ登録されていません</td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 </div>

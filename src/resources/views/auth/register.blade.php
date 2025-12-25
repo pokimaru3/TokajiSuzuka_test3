@@ -12,7 +12,7 @@
             @csrf
             <div class="form-group">
                 <img src="{{ asset('images/man.jpeg') }}" alt="man" class="man-icon">
-                <input type="name" name="name" placeholder="Username" value="{{ old('name') }}">
+                <input type="text" name="name" placeholder="Username" value="{{ old('name') }}">
                 <div class="form__error">
                     @error('name')
                     {{ $message }}

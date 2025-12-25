@@ -1,3 +1,5 @@
 *
 !public/
 !.gitignore
+/storage/app/public/images/*
+!/storage/app/public/images/.gitkeep

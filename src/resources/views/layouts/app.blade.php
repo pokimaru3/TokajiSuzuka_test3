@@ -12,7 +12,7 @@
     @yield('css')
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header__inner">
             <button id="menu-toggle" class="header__menu-btn">
                 <div class="menu-icon-wrapper">
@@ -41,7 +41,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </header>
     <main>
         @yield('content')
     </main>
