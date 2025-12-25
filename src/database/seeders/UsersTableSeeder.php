@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
 
         // 一般ユーザー（user）
         User::create([
-            'name' => 'User',
+            'name' => 'User1',
             'email' => 'user@example.com',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'User',
+            'name' => 'User2',
             'email' => 'user2@example.com',
             'password' => Hash::make('password'),
             'role' => 'user',
