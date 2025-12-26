@@ -94,6 +94,13 @@ php artisan migrate
 php artisan db:seed
 ```
 
+8. シンボリックリンクを作成
+
+```bash
+php artisan storage:link
+```
+
+
 #### mailhog
 
 http://localhost:8025
